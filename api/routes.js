@@ -54,7 +54,7 @@ app.route('/jobs/:id')
   .post(cvinfoCtrl.store);
 
 
-app.route('/cvinfo/:id')
+app.route('/cvinfo/:userhash')
   .get(cvinfoCtrl.detail)
   .put(cvinfoCtrl.update)
   .delete(cvinfoCtrl.delete);
