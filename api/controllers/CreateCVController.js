@@ -13,7 +13,7 @@ module.exports = {
         })
     },
     detail: (req, res) => {
-        let sql = 'SELECT * FROM cvinfo WHERE id = ?'
+        let sql = 'SELECT * FROM cvinfo WHERE userhash = ?'
         db.query(sql, [req.params.userID], (err, response) => {
             if (err) throw err
             res.json(response[0])
