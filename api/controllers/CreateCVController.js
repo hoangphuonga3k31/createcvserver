@@ -14,7 +14,7 @@ module.exports = {
     },
     detail: (req, res) => {
         let sql = 'SELECT * FROM cvinfo WHERE userhash = ?'
-        db.query(sql, [req.params.userID], (err, response) => {
+        db.query(sql, [req.params.userhash], (err, response) => {
             if (err) throw err
             res.json(response[0])
         })
