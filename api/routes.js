@@ -49,12 +49,12 @@ app.route('/jobs/:id')
   .delete(jobsCtrl.delete);
 
   //cvinfo routes
-app.route('/jobs')
+app.route('/cvinfo')
 .get(CVInfoCtrl.get)
 .post(CVInfoCtrl.store);
 
 
-app.route('/jobs/:id')
+app.route('/cvinfo/:id')
 .get(CVInfoCtrl.detail)
 .put(CVInfoCtrl.update)
 .delete(CVInfoCtrl.delete);
