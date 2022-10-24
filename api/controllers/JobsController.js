@@ -13,7 +13,7 @@ module.exports = {
         })
     },
     detail: (req, res) => {
-        let sql = 'SELECT * FROM jobs WHERE userhash = ?'
+        let sql = 'SELECT * FROM jobs WHERE id = ?'
         db.query(sql, [req.params.id], (err, response) => {
             if (err) throw err
             res.json(response[0])
