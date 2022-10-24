@@ -47,20 +47,7 @@ app.route('/jobs/:id')
   .get(jobsCtrl.detail)
   .put(jobsCtrl.update)
   .delete(jobsCtrl.delete);
-
-  //cvinfo routes
-app.route('/cvinfo')
-.get(CVInfoCtrl.get)
-.post(CVInfoCtrl.store);
-
-
-app.route('/cvinfo/:id')
-.get(CVInfoCtrl.detail)
-.put(CVInfoCtrl.update)
-.delete(CVInfoCtrl.delete);
-}
-
-
+};
 
 
 
