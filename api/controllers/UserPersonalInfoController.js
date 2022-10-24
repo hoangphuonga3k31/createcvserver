@@ -13,7 +13,7 @@ module.exports = {
         })
     },
     detail: (req, res) => {
-        let sql = 'SELECT * FROM userpersonalinfo WHERE id = ?'
+        let sql = 'SELECT * FROM userpersonalinfo WHERE userhash = ?'
         db.query(sql, [req.params.userID], (err, response) => {
             if (err) throw err
             res.json(response[0])
@@ -22,7 +22,7 @@ module.exports = {
     update: (req, res) => {
         let data = req.body;
         let productId = req.params.productId;
-        let sql = 'UPDATE userpersonalinfo SET ? WHERE id = ?'
+        let sql = 'UPDATE userpersonalinfo SET ? WHERE userhash = ?'
         db.query(sql, [data, userID], (err, response) => {
             if (err) throw err
             res.json({message: 'Update success!'})
@@ -37,7 +37,7 @@ module.exports = {
         })
     },
     delete: (req, res) => {
-        let sql = 'DELETE FROM userpersonalinfo WHERE id = ?'
+        let sql = 'DELETE FROM userpersonalinfo WHERE userhash = ?'
         db.query(sql, [req.params.userID], (err, response) => {
             if (err) throw err
             res.json({message: 'Delete success!'})
