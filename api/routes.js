@@ -2,7 +2,7 @@
 module.exports = function(app) {
   let UserPersonalnfoCtrl = require('./controllers/UserPersonalInfoController');
   let UserProfileCtrl = require('./controllers/UserProfileController');
-  let apliedJobslistCtrl = require('./controllers/ApliedJobsListController');
+  let ApliedJobCtrl = require('./controllers/ApliedJobsListController');
   let jobsCtrl = require('./controllers/JobsController');
 
   // userpersonalinfo Routes
@@ -26,15 +26,15 @@ module.exports = function(app) {
     .delete(UserProfileCtrl.delete);
 
   //jobslist Routes
-  app.route('/apliedJobslist')
-  .get(apliedJobslistCtrl.get)
-  .post(apliedJobslistCtrl.store);
+  app.route('/apliedjobslist')
+  .get(ApliedJobCtrl.get)
+  .post(ApliedJobCtrl.store);
 
 
-  app.route('/apliedJobslist/:userID')
-    .get(apliedJobslistCtrl.detail)
-    .put(appliedJobslistCtrl.update)
-    .delete(apliedJobslistCtrl.delete);
+app.route('/apliedjobslist/:userID')
+  .get(ApliedJobCtrl.detail)
+  .put(ApliedJobCtrl.update)
+  .delete(ApliedJobCtrl.delete);
 
 //jobs Routes
   app.route('/jobs')
