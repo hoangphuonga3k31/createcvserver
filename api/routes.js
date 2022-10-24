@@ -4,6 +4,7 @@ module.exports = function(app) {
   let UserProfileCtrl = require('./controllers/UserProfileController');
   let ApliedJobCtrl = require('./controllers/ApliedJobsListController');
   let jobsCtrl = require('./controllers/JobsController');
+  let cvinfoCtrl = require('./controllers/CreateCVController')
 
   // userpersonalinfo Routes
   app.route('/userpersonalinfo')
@@ -46,6 +47,17 @@ app.route('/jobs/:id')
   .get(jobsCtrl.detail)
   .put(jobsCtrl.update)
   .delete(jobsCtrl.delete);
+
+  //cv Routes
+  app.route('/cvinfo')
+  .get(cvinfoCtrl.get)
+  .post(cvinfoCtrl.store);
+
+
+app.route('/cvinfo/:id')
+  .get(cvinfoCtrl.detail)
+  .put(cvinfoCtrl.update)
+  .delete(cvinfoCtrl.delete);
 };
 
 
