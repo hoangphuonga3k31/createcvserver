@@ -13,10 +13,10 @@ module.exports = {
         })
     },
     detail: (req, res) => {
-        let sql = 'SELECT * FROM cvinfo WHERE userhash = ?'
+        let sql = 'SELECT * FROM cvinfo WHERE userhash = ? order by id'
         db.query(sql, [req.params.userhash], (err, response) => {
             if (err) throw err
-            res.json(response[0])
+            res.json(response)
         })
     },
     update: (req, res) => {

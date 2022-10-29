@@ -16,7 +16,7 @@ module.exports = {
         let sql = 'SELECT * FROM jobs WHERE id = ?'
         db.query(sql, [req.params.id], (err, response) => {
             if (err) throw err
-            res.json(response[0])
+            res.json(response)
         })
     },
     update: (req, res) => {

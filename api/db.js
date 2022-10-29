@@ -8,4 +8,11 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME || "sql6528776"
 });
 
+// const db = mysql.createConnection({
+//   host: process.env.DB_HOST || "localhost",
+//   user: process.env.DB_USER || "root",
+//   password: process.env.DB_PASS || "",
+//   database: process.env.DB_NAME || "createcv"
+// });
+
 module.exports = db
